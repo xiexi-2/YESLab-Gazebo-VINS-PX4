@@ -119,3 +119,4 @@ Gazebo Ground Truth 为什么不能直接作为本任务的 PX4 位置输入？
 答：因为仿真环境太完美了（没有风的扰动、光线恒定、没有传感器噪声、物理引擎过于平滑）。真实世界充满了干扰、震动、光照变化和通信延迟，需要更鲁棒的算法和更精细的调试。
 
 
+b站视频： https://www.bilibili.com/video/BV15aJt69EBa/?share_source=copy_web&vd_source=35c8ec921ba5dff1d1a9804cdc6ce651
