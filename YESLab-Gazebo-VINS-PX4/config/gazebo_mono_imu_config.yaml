@@ -1,0 +1,32 @@
+%YAML:1.0
+imu: 1
+num_of_cam: 1
+
+image0_topic: "/camera/image_raw"
+imu_topic: "/gazebo_imu/data"
+
+image_width: 640
+image_height: 480
+
+model_type: PINHOLE
+camera_name: camera
+cam0_calib: "cam0_pinhole.yaml"
+estimate_extrinsic: 0
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [1, 0, 0, 0,
+          0, 1, 0, 0,
+          0, 0, 1, 0,
+          0, 0, 0, 1]
+
+# --- 极大放宽初始化条件 ---
+acc_n: 0.08              # 增大加速度计噪声
+gyr_n: 0.004             # 增大陀螺仪噪声
+acc_w: 0.0004            # 增大加速度计随机游走
+gyr_w: 0.00004           # 增大陀螺仪随机游走
+init_imu_thresh: 0.0005  # 极度降低IMU激励要求（只要有一点点加速度就算）
+keyframe_parallax: 0.1   # 极度降低视差要求（只要画面有一点点移动就算）
+max_solver_time: 0.04
+max_num_iterations: 8
